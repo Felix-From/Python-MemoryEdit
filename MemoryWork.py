@@ -33,7 +33,7 @@ def checkIfAdressWorks(adress):
     if (adress and adress != ""): 
         return True
     return False
-
+#Hi
 #Keybinds
 def addKeyBind(keyName,keyFunktionName,description,doCheck = True):
     #KeyName = "F1" , keyFunktionName = "Heal" , desc. = "Heilt dich" , doCheck = True/False
