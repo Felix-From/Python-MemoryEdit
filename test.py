@@ -38,6 +38,9 @@ def __callbackFunction(triggerValue,itemValue):
     # Stamina_adress wie normal erstellen
 stamina_address = MemWork.createPointerAddr(mem,module_base,0x004A43A8,[0x1E8,0x40,0xA8,0xB8C,0x10,0x370,0x9DC])
 
+    #Hab noch kein Pointer, musst deins Rein kopieren.
+FishPointerAddr = 0x1F7022083A4
+
     #createLookUpAddress process,address,type(als str),"AnzeigeName",Callback Function, triggerValue , startwert (ohne angabe = -1)
 _type = "int" # muss als Str sein.
 AnzeigeName = "Angeln" #Wird beim OnTriggerLookUP in Console geschrieben
@@ -45,20 +48,21 @@ AnzeigeName = "Angeln" #Wird beim OnTriggerLookUP in Console geschrieben
 triggerValue = 5 #Ein von dir zugewiesener Text der beim callback als erste Variable wieder raus gegeben wird ( zur zuweisung oder so)
 lastRead = 270.0 #Der Wert mit dem er starten soll, wenn weg gelassen wird ist er -1
 #Aber Achtung, bei -1 wird er zu 100% min. 1 mal triggern nach erstellung.(Wenn er Aktiv getriggert wird das erste mal)
-MemWork.createLookUpAddress(mem,0x1F7022083A4,_type,AnzeigeName,__callbackFunction,triggerValue,lastRead)
+MemWork.createLookUpAddress(mem,FishPointerAddr,_type,AnzeigeName,__callbackFunction,triggerValue,lastRead)
 #vergleicht den lastRead mit aktuell und wenn es nicht so ist triggert er deine Funktion
 #und speichert den neuen wert in lastRead damit er nicht 2x los geht.
-MemWork.triggerLookUpAddress(0x1F7022083A4,True)
+MemWork.triggerLookUpAddress(FishPointerAddr,True)
 
-def debug_func():
+def debug_func(): 
+    #Testfunktionen auf F1
     MemWork.triggerPointerFreezer(stamina_address,False)
-    MemWork.triggerLookUpAddress(0x1F7022083A4,False)
+    MemWork.triggerLookUpAddress(FishPointerAddr,False)
 
     print(str(MemWork.pointersToFreeze[0]))
     print(str(MemWork.pointersToLookUp[0]))
 
     MemWork.removePointerFreezer(stamina_address)
-    MemWork.removeLookUpAddress(0x1F7022083A4)
+    MemWork.removeLookUpAddress(FishPointerAddr)
 
     print(str(MemWork.pointersToFreeze))
     print(str(MemWork.pointersToLookUp))
