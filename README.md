@@ -3,8 +3,8 @@ This respository was used for version control.<br />
 
 MemWork.py can be imported in your local script and can be used. <br />
 main.py is with an Example on how to use it.<br />
-main-lite.py is a simpler version with some English comments<br/>
 (comments/Descriptions are written in german... sorry)<br />
+main-lite.py is a simpler version with some English comments<br/>
 
 >**Requirements**:<br/>
 >pip install pymem
