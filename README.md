@@ -17,7 +17,8 @@ main-lite.py is a simpler version with some English comments<br/>
 ## Pointer Stuff
 **Function:** createPointerAddr(process,module_base,StaticOffset,Offsets)<br />
 **Returns:** Calculated_Address<br />
-**Infos:** to find the StaticOffset and Offsets[] you need to use CheatEngine or something like that and do a Pointerscan.
+**Infos:** to find the StaticOffset and Offsets[] you need to use CheatEngine or something like that and do a Pointerscan.<br/>
+If you do that you also will know what module_base you need.
 
 ## Pointer Freezer
 ## Description
