@@ -1,4 +1,4 @@
-# Private Python version of CheatEngine.
+# Private Python version of CheatEngine. Tested on Stardew Valley.
 This respository was used for version control.<br />
 
 MemWork.py can be imported in your local script and can be used. <br />
