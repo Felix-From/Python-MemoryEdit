@@ -17,7 +17,7 @@ MemWork.triggerPointerFreezer(stamina_address,True)
 #LookUp Example
 
 def __callbackFunction(triggerValue,itemValue):
-    print("Test done | "+ str(triggerValue)+ " | " + str(itemValue))
+    print("Test done from Trigger: "+ str(triggerValue)+ " Value changed to :" + str(itemValue))
     return
 
 stamina_address = MemWork.createPointerAddr(mem,module_base,0x004A43A8,[0x1E8,0x40,0xA8,0xB8C,0x10,0x370,0x9DC])
